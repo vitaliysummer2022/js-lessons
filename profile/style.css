@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #3e3e3e;
+    font: 18px Arial, Helvetica, sans-serif;
+    background-color: #f9fafb
+}
+header {
+    border-bottom: 2px solid #eaeaea;
+    color: #fff;
+	background-color: #4848b5;
+}
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.header-wrap {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo img {
+	width: 40px;
+	border-radius: 50%;
+}
+
+/* Menu */
+.menu {
+    position: relative;
+    padding-right: 50px;
+    cursor: pointer;
+}
+.menu::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    background: url(img/arrow.svg) 50%/cover no-repeat;
+    transform: translateY(-50%) rotate(0deg);
+}
+.open::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+.open + .menu-list {
+    display: block;
+}
+.menu img {
+    height: 65px;
+    vertical-align: middle;
+    border-radius: 50%;
+    box-shadow: 0 0 1px 2px rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}
+.menu-list {
+    position: absolute;
+    z-index: 2;
+    top: 86px;
+    right: 0px;
+    display: none;
+    min-width: 180px;
+    padding: 8px;
+    border: 1px solid #4848b5;
+    border-radius: 4px;
+    color: #3e3e3e;
+    background-color: #fafafa;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.menu-list li {
+    padding-bottom: 5px;
+    list-style-type: none;
+    transition: .4s;
+    cursor: pointer;
+}
+.menu-list li:hover {
+    color: #4848b5;
+}
+.menu-list li:last-child {
+    padding-bottom: 0;
+}
+main {
+    position: relative;
+    flex-grow: 1;
+    background: url(img/binoculars.svg) 50% 30%/100px no-repeat;
+}
+main::before {
+    position: absolute;
+    content: 'No friends added';
+    top: calc(30% + 100px);
+    left: 0;
+    width: 100%;
+    color: #4848b5;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+}
